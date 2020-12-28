@@ -66,7 +66,7 @@ bind h drop`,
 
   return (
     <Paper className={classes.root}>
-      <Grid container spacing={16}>
+      <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <TextField
             multiline
@@ -77,13 +77,20 @@ bind h drop`,
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <pre style={{ backgroundColor: "#eee", whiteSpace: "pre-line" }}>{formattedContent}</pre>
+          <pre
+            style={{
+              backgroundColor: "#eee",
+              whiteSpace: "pre-line",
+            }}
+          >
+            {formattedContent}
+          </pre>
 
           <CopyToClipboard
             text={formattedContent}
             onCopy={() => setState((state) => ({ ...state, copied: true }))}
           >
-            <Button disableRipple className={classes.button} variant="raised" size="small">
+            <Button disableRipple className={classes.button} size="small" variant="contained">
               <CopyIcon className={classNames(classes.leftIcon, classes.iconSmall)} />
               Copy
             </Button>
