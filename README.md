@@ -1,3 +1,3 @@
 # react-ts-zfyrd6
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-ts-zfyrd6)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Gosha/csgo-config)
