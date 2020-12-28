@@ -38,18 +38,11 @@ const styles = (theme) => ({
 })
 
 // For some reason react-scripts chokes on this line
-type Theme = any // keyof ReturnType<typeof styles>
-type EditorProps = WithStyles<Theme> & {
-  classes: any
-}
+type Theme = ReturnType<typeof styles>
+type EditorProps = WithStyles<Theme>
 
-export class Editor extends React.Component<
-  EditorProps,
-  {
-    [key: string]: any
-  }
-> {
-  state = {
+const Editor: React.FC<EditorProps> = ({ classes }) => {
+  const [state, setState] = React.useState({
     content: `#sensitivity 1.8
 bind F3 "buy ak47; buy m4a1; buy vest; buy vesthelm; buy defuser;"
 bind kp_pgup " buy smokegrenade; buy flashbang; buy hegrenade; buy flashbang;"
@@ -62,55 +55,43 @@ bind mwheeldown +jump
 bind f slot7
 bind g slot8
 bind h drop`,
-  }
+    copied: false,
+  })
 
-  handleChange = (key: string) => (event) =>
-    this.setState({
-      [key]: event.target.value,
-    })
+  const formattedContent = state.content
+    .split("\n")
+    .filter((line) => !line.match(/^#/))
+    .filter((line) => !line.match(/^\s*$/))
+    .join(";")
 
-  get formattedContent() {
-    return this.state.content
-      .split("\n")
-      .filter((line) => !line.match(/^#/))
-      .filter((line) => !line.match(/^\s*$/))
-      .join(";")
-  }
-
-  render() {
-    const { classes } = this.props
-
-    return (
-      <Paper className={classes.root}>
-        <Grid container spacing={16}>
-          <Grid item xs={12} md={6}>
-            <TextField
-              multiline
-              style={{ width: "100%" }}
-              onChange={this.handleChange("content")}
-              value={this.state.content}
-            />
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-            <pre style={{ backgroundColor: "#eee", whiteSpace: "pre-line" }}>
-              {this.formattedContent}
-            </pre>
-
-            <CopyToClipboard
-              text={this.formattedContent}
-              onCopy={() => this.setState({ copied: true })}
-            >
-              <Button disableRipple className={classes.button} variant="raised" size="small">
-                <CopyIcon className={classNames(classes.leftIcon, classes.iconSmall)} />
-                Copy
-              </Button>
-            </CopyToClipboard>
-          </Grid>
+  return (
+    <Paper className={classes.root}>
+      <Grid container spacing={16}>
+        <Grid item xs={12} md={6}>
+          <TextField
+            multiline
+            style={{ width: "100%" }}
+            onChange={(e) => setState((state) => ({ ...state, content: e.currentTarget.value }))}
+            value={state.content}
+          />
         </Grid>
-      </Paper>
-    )
-  }
+
+        <Grid item xs={12} md={6}>
+          <pre style={{ backgroundColor: "#eee", whiteSpace: "pre-line" }}>{formattedContent}</pre>
+
+          <CopyToClipboard
+            text={formattedContent}
+            onCopy={() => setState((state) => ({ ...state, copied: true }))}
+          >
+            <Button disableRipple className={classes.button} variant="raised" size="small">
+              <CopyIcon className={classNames(classes.leftIcon, classes.iconSmall)} />
+              Copy
+            </Button>
+          </CopyToClipboard>
+        </Grid>
+      </Grid>
+    </Paper>
+  )
 }
 
 export default withStyles(styles)(Editor)
