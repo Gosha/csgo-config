@@ -1882,10 +1882,10 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/classnames@2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.3.tgz#3f0ff6873da793870e20a260cada55982f38a9e5"
-  integrity sha512-x15/Io+JdzrkM9gnX6SWUs/EmqQzd65TD9tcZIAQ1VIdb93XErNuYmB7Yho8JUCE189ipUSESsWvGvYXRRIvYA==
+"@types/classnames@2.2.11":
+  version "2.2.11"
+  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.11.tgz#2521cc86f69d15c5b90664e4829d84566052c1cf"
+  integrity sha512-2koNhpWm3DgWRp5tpkiJ8JGc1xTn2q0l+jUNUE7oMKXUf5NpI9AIdC4kbjGNFBdHtcxBD18LAksoudAVhFKCjw==
 
 "@types/duplexify@^3.6.0":
   version "3.6.0"
