@@ -2,7 +2,6 @@ import * as React from "react"
 
 import classNames from "classnames"
 
-import Divider from "@material-ui/core/Divider"
 import Grid from "@material-ui/core/Grid"
 import Paper from "@material-ui/core/Paper"
 import TextField from "@material-ui/core/TextField"
@@ -10,7 +9,6 @@ import { withStyles, WithStyles } from "@material-ui/core/styles"
 import CopyToClipboard from "react-copy-to-clipboard"
 
 import Button from "@material-ui/core/Button"
-import IconButton from "@material-ui/core/IconButton"
 import CopyIcon from "@material-ui/icons/Assignment"
 
 const styles = (theme) => ({
