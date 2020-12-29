@@ -52,7 +52,10 @@ bind mwheeldown +jump
 
 bind f slot7
 bind g slot8
-bind h drop`,
+bind h drop
+
+cl_radar_scale 0.4
+`.trim(),
     copied: false,
   })
 
