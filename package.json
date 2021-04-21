@@ -20,7 +20,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "@types/classnames": "2.2.11",
+    "@types/classnames": "2.3.1",
     "@types/react": "^17.0.3",
     "@types/react-copy-to-clipboard": "5.0.0",
     "@types/react-dom": "^17.0.3",
