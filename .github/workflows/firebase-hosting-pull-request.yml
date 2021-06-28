@@ -11,6 +11,7 @@ jobs:
       - run: yarn
       - run: yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
+        if: github.actor != 'dependabot[bot]'
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CSGO_CONFIG }}"
