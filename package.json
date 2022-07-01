@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/classnames": "2.3.1",
     "@types/react": "^17.0.42",
-    "@types/react-copy-to-clipboard": "5.0.2",
+    "@types/react-copy-to-clipboard": "5.0.3",
     "@types/react-dom": "^17.0.14",
     "firebase-tools": "^11.0.0",
     "prettier": "^2.6.2",
