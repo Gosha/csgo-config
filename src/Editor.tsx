@@ -43,7 +43,7 @@ const Editor: React.FC<EditorProps> = ({ classes }) => {
   const [state, setState] = React.useState({
     content: `#sensitivity 1.8
 bind F3 "buy ak47; buy m4a1; buy vest; buy vesthelm; buy defuser;"
-bind kp_pgup " buy smokegrenade; buy flashbang; buy hegrenade; buy flashbang;"
+bind kp_9 " buy smokegrenade; buy flashbang; buy hegrenade; buy flashbang;"
 
 bind alt +voicerecord
 
